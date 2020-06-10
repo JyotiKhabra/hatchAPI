@@ -7,10 +7,10 @@ class TripsController < ApplicationController
 
   def create
     @trip = Trip.create(trip_params)
-    save_destinations(@trip['id'])
-    save_collaborators(@trip['id'])
+    @saved_dest = save_destinations(@trip['id'])
+    @saved_collab = save_collaborators(@trip['id'])
 
-    render :view => false
+    head :ok
   end
 
   def save_destinations(trip_id)

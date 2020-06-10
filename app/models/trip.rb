@@ -1,3 +1,5 @@
 class Trip < ActiveRecord::Base
-  # accepts_nested_attributes_for :destinations
+  has_many :destinations 
+  has_many :collaborators
+  has_many :packing_items
 end
