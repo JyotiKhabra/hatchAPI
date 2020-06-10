@@ -10,6 +10,8 @@ Rails.application.routes.draw do
     resources :users, only: [:index]
     resources :places, only: [:show]
     resources :place_details, only: [:show]
+    resources :trips, only: [:create, :show] 
+    resources :collaborators, only: [:create]
   end
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
