@@ -1,16 +1,29 @@
 require 'httparty'
-
+ActiveRecord::Base.include_root_in_json = true
 class TripsController < ApplicationController
 
   protect_from_forgery with: :exception
   skip_before_action :verify_authenticity_token
+
+  def show
+    @trip = Trip.find(params[:id])
+    @destinations = @trip.destinations
+    @packing_items = @trip.packing_items
+    @collaborators = @trip.collaborators
+    @all_info = {
+      destinations: @destinations, 
+      packing_items: @packing_items, 
+      collaborators: @collaborators
+    }
+    render json: @all_info.to_json
+  end
 
   def create
     @trip = Trip.create(trip_params)
     @saved_dest = save_destinations(@trip['id'])
     @saved_collab = save_collaborators(@trip['id'])
 
-    head :ok
+    render json: @trip
   end
 
   def save_destinations(trip_id)
