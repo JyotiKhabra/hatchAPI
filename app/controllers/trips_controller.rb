@@ -11,9 +11,14 @@ class TripsController < ApplicationController
     @packing_items = @trip.packing_items
     @collaborators = @trip.collaborators
     @all_info = {
-      destinations: @destinations, 
-      packing_items: @packing_items, 
-      collaborators: @collaborators
+      destinations: @destinations,
+      packing_items: @packing_items,
+      collaborators: @collaborators.map { |collaborator| {
+        id: collaborator.id,
+        user_id: collaborator.user_id,
+        trip_id: collaborator.trip_id,
+        name: collaborator.user.name
+      }}
     }
     render json: @all_info.to_json
   end
