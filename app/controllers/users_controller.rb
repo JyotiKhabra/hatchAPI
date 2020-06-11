@@ -4,7 +4,4 @@ class UsersController < ApplicationController
     render json: @user
   end
 
-  def create
-    @collaborator = Collaborator.create(collaborator_params)
-  end
 end
