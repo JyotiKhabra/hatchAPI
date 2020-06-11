@@ -11,7 +11,7 @@ Rails.application.routes.draw do
     resources :places, only: [:show]
     resources :place_details, only: [:show]
     resources :trips, only: [:create, :show]
-    resources :collaborators, only: [:create]
+    resources :collaborators, only: [:create, :destroy]
   end
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
