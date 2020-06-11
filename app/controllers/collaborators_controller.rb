@@ -4,9 +4,32 @@ class CollaboratorsController < ApplicationController
   skip_before_action :verify_authenticity_token
 
   def create
-    @collaborator = Collaborator.create(collaborator_params)
+    @collaborators = save_collaborators()
+    @allUsers = @collaborators.map { |collaborator| {
+      id: collaborator.id,
+      name: collaborator.user.name
+    }}
+    render json: @allUsers
+  end
 
-    render json: @collaborator
+  def destroy
+    @currentCollaborator = Collaborator.find(params[:id])
+    @currentCollaborator.destroy
+    @collaborators = Collaborator.where(trip_id: trip_id_params["trip_id"])
+    @allUsers = @collaborators.map { |collaborator| {
+      id: collaborator.id,
+      name: collaborator.user.name
+    }}
+    render json: @allUsers
+  end
+
+  def save_collaborators()
+    collaborator_params['collaborators'].each do |collaborator|
+      Collaborator.create({user_id: collaborator['user']['id'], trip_id: trip_id_params["trip_id"]})
+    end
+
+    @collaborators = Collaborator.where(trip_id: trip_id_params["trip_id"])
+
 
   end
 
@@ -14,9 +37,14 @@ class CollaboratorsController < ApplicationController
 
   def collaborator_params
     params.permit(
-      :trip_id,
-      :user_id
+      :collaborators => [:user => [:id, :name, :email]]
     )
+  end
+
+  def trip_id_params
+    params.permit(
+      :trip_id
+      )
   end
 
 end
