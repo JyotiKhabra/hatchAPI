@@ -6,6 +6,11 @@ class PackingItemsController < ApplicationController
   def create
     @packing_item = PackingItem.create(packing_item_params)
   end
+
+  def update
+    @packing_item = PackingItem.find(packing_item[:id])
+    @packing_item.update!
+    
   private
 
   def packing_item_params
