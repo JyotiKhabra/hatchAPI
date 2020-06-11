@@ -6,16 +6,19 @@ class CollaboratorsController < ApplicationController
   def create
     @colloborators = save_collaborators()
 
-    render json: @collaborators
+    @allusers = @collaborators.map  { |collaborator| {
+      name: collaborator.user
+    }}
+
+    render json: @allusers
   end
 
   def save_collaborators()
     collaborator_params['collaborators'].each do |collaborator|
-      Collaborator.create({user_id: collaborator['id'], trip_id: trip_id_params})
+      Collaborator.create({user_id: collaborator['id'], trip_id: trip_id_params["trip_id"]})
     end
 
-    
-    Collaborator.all.where(trip_id: trip_id_params)
+    @collaborators = Collaborator.where(trip_id_params)
 
 
   end
