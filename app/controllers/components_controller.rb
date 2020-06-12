@@ -8,7 +8,18 @@ def show
 end
 
 def create
+  @components = Component.create(components_params)
+  @components = Component.where(destination_id:  destination_params["destination_id"])
+  render json: @components
+end
 
+
+def update
+  @component = Component.find(params[:id])
+  @component.title = components_params['title']
+  @component.save!
+  @components = Component.where(destination_id:  destination_params["destination_id"])
+  render json: @components
 end
 
 def destroy
@@ -25,6 +36,13 @@ private
 def destination_params
   params.permit(
     :destination_id
+  )
+end
+
+def components_params
+  params.permit(
+    :destination_id,
+    :title
   )
 end
 
