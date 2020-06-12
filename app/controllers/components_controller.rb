@@ -35,7 +35,8 @@ private
 
 def destination_params
   params.permit(
-    :destination_id
+    :destination_id,
+    :title,
   )
 end
 
