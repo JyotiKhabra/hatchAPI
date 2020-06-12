@@ -11,6 +11,7 @@ class TripsController < ApplicationController
     @packing_items = @trip.packing_items
     @collaborators = @trip.collaborators
     @all_info = {
+      trip: @trip,
       destinations: @destinations,
       packing_items: @packing_items,
       collaborators: @collaborators.map do |collaborator| {
