@@ -13,12 +13,13 @@ class TripsController < ApplicationController
     @all_info = {
       destinations: @destinations,
       packing_items: @packing_items,
-      collaborators: @collaborators.map { |collaborator| {
-        id: collaborator.id,
-        user_id: collaborator.user_id,
-        trip_id: collaborator.trip_id,
-        name: collaborator.user.name
-      }}
+      collaborators: @collaborators.map do |collaborator| {
+          id: collaborator.id,
+          user_id: collaborator.user_id,
+          trip_id: collaborator.trip_id,
+          name: collaborator.user.name
+        }
+      end
     }
     render json: @all_info.to_json
   end
@@ -46,6 +47,8 @@ class TripsController < ApplicationController
 
 
   def save_collaborators(trip_id)
+    puts 'COLLAB'
+    puts collaborators_params
     collaborators_params['collaborators'].each do |collaborator|
       Collaborator.create({user_id: collaborator['id'], trip_id: trip_id})
     end
