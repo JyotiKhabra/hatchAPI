@@ -12,6 +12,7 @@ class PackingItemsController < ApplicationController
   def update
     @packing_item = PackingItem.find(params[:id])
     @packing_item.description = packing_item_params['description']
+    @packing_item.checked = packing_item_params['checked']
     @packing_item.save!
     @packing_items = PackingItem.where(trip_id: packing_item_params['trip_id'])
     render json: @packing_items
@@ -29,7 +30,8 @@ class PackingItemsController < ApplicationController
   def packing_item_params
     params.permit(
       :description,
-      :trip_id
+      :trip_id,
+      :checked
     )
   end
 end
