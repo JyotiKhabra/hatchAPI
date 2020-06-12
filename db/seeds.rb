@@ -134,6 +134,12 @@ collaborator1 = Collaborator.new(
 )
 collaborator1.save!
 
+collaborator1 = Collaborator.new(
+  user_id: 2,
+  trip_id: 2
+)
+collaborator1.save!
+
 collaborator2 = Collaborator.new(
   user_id: 3,
   trip_id: 1
