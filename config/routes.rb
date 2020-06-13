@@ -9,7 +9,7 @@ Rails.application.routes.draw do
     resources :users, only: [:index, :show]
     resources :places, only: [:show]
     resources :place_details, only: [:show]
-    resources :trips, only: [:create, :show]
+    resources :trips, only: [:create, :show, :destroy]
     resources :packing_items, only: [:create, :update, :destroy]
     resources :component_items, only: [:create, :show, :destroy]
     resources :components, only: [:create, :show, :update, :destroy ]

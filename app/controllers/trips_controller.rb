@@ -43,6 +43,19 @@ class TripsController < ApplicationController
     render json: @trip
   end
 
+  def destroy 
+    @trip = Trip.find(params[:id])
+    @trip.destroy
+    @user = User.find(user_params['user_id'])
+    @trips = @user.collaborators.map do |collaborator| 
+      {
+        trip:collaborator.trip,
+        destinations: collaborator.trip.destinations
+      }
+    end
+    render json: @trips
+  end
+
   def save_destinations(trip_id)
     destinations_params['destinations'].each do |destination|
       @place_details = HTTParty.get("https://maps.googleapis.com/maps/api/place/details/json?key=#{ENV['GOOGLE_PLACES_API_KEY']}&place_id=#{destination['place_id']}")
@@ -85,6 +98,12 @@ class TripsController < ApplicationController
   def collaborators_params
     params.permit(
       :collaborators => [:id, :name, :email]
+    )
+  end
+
+  def user_params
+    params.permit(
+      :user_id
     )
   end
 
