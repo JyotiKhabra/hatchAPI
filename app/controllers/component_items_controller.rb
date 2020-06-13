@@ -9,6 +9,15 @@ class ComponentItemsController < ApplicationController
 
   end
 
+  def destroy
+    @component_item = ComponentItem.find(params[:id])
+    @component_item.destroy
+    @component_items = ComponentItem.where(component_id:  component_id_params["component_id"])
+    # puts @components
+    render json: @component_items
+
+  end
+
 
   def create
 
@@ -40,6 +49,12 @@ private
     params.permit(
       :title,
       :description
+    )
+  end
+
+  def component_id_params
+    params.permit(
+      :component_id
     )
   end
 
