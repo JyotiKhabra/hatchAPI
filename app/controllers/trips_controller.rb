@@ -8,11 +8,21 @@ class TripsController < ApplicationController
   def show
     @trip = Trip.find(params[:id])
     @destinations = @trip.destinations
+    @components = @trip.destinations.map do |destination| {
+    components: destination.components,
+    component_items: destination.components.map do |component| 
+      component.component_items
+    end    
+  }
+  end
+
     @packing_items = @trip.packing_items
     @collaborators = @trip.collaborators
     @all_info = {
       trip: @trip,
       destinations: @destinations,
+      components: @components,
+      component_items: @component_items,
       packing_items: @packing_items,
       collaborators: @collaborators.map do |collaborator| {
           id: collaborator.id,
