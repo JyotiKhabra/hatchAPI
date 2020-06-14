@@ -8,9 +8,10 @@ def show
 end
 
 def create
-  @components = Component.create(components_params)
-  @components = Component.where(destination_id:  destination_params["destination_id"])
-  render json: @components
+  @components = Component.create(destination_id_params)
+  # @components = Component.where(destination_id:  destination_params["destination_id"])
+  # render json: @components
+  head :ok
 end
 
 

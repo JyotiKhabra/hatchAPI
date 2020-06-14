@@ -12,10 +12,7 @@ class ComponentItemsController < ApplicationController
   def destroy
     @component_item = ComponentItem.find(params[:id])
     @component_item.destroy
-    @component_items = ComponentItem.where(component_id: component_id_params["component_id"])
-    # puts @components
-    render json: @component_items
-
+    head :ok
   end
 
 
@@ -23,32 +20,16 @@ class ComponentItemsController < ApplicationController
 
     @component_item = ComponentItem.create(component_item_params)
 
-    render json: @component_item
+    head :ok
   end
-
-  # def destroy
-  #   @currentComponentItem = ComponentItem.find(params[:id])
-  #   @currentComponentItem.destroy
-  #   @component_items = ComponentItem.where(component_id: component_id_params["component_id"])
-  #   @remainComponents = @component_items.map { |component_item| {
-  #     id: component_item.id,
-  #     title: component_item.title,
-  #     address: component_item.address,
-  #     description: component_item.description,
-  #     image: component_item.image_url
-  #   }}
-  #   render json: @remainComponents
-  # end
-
-
-
 
 private
 
   def component_item_params
     params.permit(
       :title,
-      :description
+      :description,
+      :component_id
     )
   end
 
