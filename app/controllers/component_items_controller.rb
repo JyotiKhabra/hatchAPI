@@ -12,7 +12,7 @@ class ComponentItemsController < ApplicationController
   def destroy
     @component_item = ComponentItem.find(params[:id])
     @component_item.destroy
-    @component_items = ComponentItem.where(component_id:  component_id_params["component_id"])
+    @component_items = ComponentItem.where(component_id: component_id_params["component_id"])
     # puts @components
     render json: @component_items
 
