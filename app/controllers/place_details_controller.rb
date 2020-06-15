@@ -1,3 +1,6 @@
+require 'httparty'
+require 'base64'
+
 class PlaceDetailsController < ApplicationController
 
   def show

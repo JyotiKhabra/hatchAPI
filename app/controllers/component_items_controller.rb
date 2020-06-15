@@ -17,8 +17,26 @@ class ComponentItemsController < ApplicationController
 
 
   def create
-
-    @component_item = ComponentItem.create(component_item_params)
+    if (component_item_params['place_id']) 
+      @details = HTTParty.get("https://maps.googleapis.com/maps/api/place/details/json?key=#{ENV['GOOGLE_PLACES_API_KEY']}&place_id=#{component_item_params['place_id']}")
+  
+    
+      data = {
+        title: component_item_params['title'],
+        description: component_item_params['description'],
+        component_id: component_item_params['component_id'],
+        image_url: @details['result']['photos'][0]['photo_reference'],
+        address: @details['result']['vicinity']
+      }
+      @component_item = ComponentItem.create(data)
+    else
+      data = {
+        title: component_item_params['title'],
+        description: component_item_params['description'],
+        component_id: component_item_params['component_id']
+      } 
+      @component_item = ComponentItem.create(data)
+    end
 
     head :ok
   end
@@ -29,7 +47,8 @@ private
     params.permit(
       :title,
       :description,
-      :component_id
+      :component_id,
+      :place_id
     )
   end
 
