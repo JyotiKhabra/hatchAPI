@@ -5,6 +5,9 @@ class PackingItemsController < ApplicationController
 
   def create
     @packing_item = PackingItem.create(packing_item_params)
+
+    Component.create({destination_id: @place["id"], title: "Restaurants"})
+
     @packing_items = PackingItem.where(trip_id: packing_item_params['trip_id'])
     render json: @packing_items
   end
@@ -18,7 +21,7 @@ class PackingItemsController < ApplicationController
     render json: @packing_items
   end
 
-  def destroy 
+  def destroy
     @packing_item = PackingItem.find(params[:id])
     @packing_item.destroy
     @packing_items = PackingItem.where(trip_id: packing_item_params['trip_id'])

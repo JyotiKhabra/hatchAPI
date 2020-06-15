@@ -12,9 +12,9 @@ class TripsController < ApplicationController
       destination.components
     end
 
-    # component_items: destination.components.map do |component| 
+    # component_items: destination.components.map do |component|
     #   component.component_items
-    # end    
+    # end
     @packing_items = @trip.packing_items
     @collaborators = @trip.collaborators
     @all_info = {
@@ -44,15 +44,18 @@ class TripsController < ApplicationController
     @trip = Trip.create(trip_params)
     @saved_dest = save_destinations(@trip['id'])
     @saved_collab = save_collaborators(@trip['id'])
+    PackingItem.create(trip_id: @trip['id'], description: "Passport")
+    PackingItem.create(trip_id: @trip['id'], description: "Toothbrush")
+    PackingItem.create(trip_id: @trip['id'], description: "Pajamas")
 
     render json: @trip
   end
 
-  def destroy 
+  def destroy
     @trip = Trip.find(params[:id])
     @trip.destroy
     @user = User.find(user_params['user_id'])
-    @trips = @user.collaborators.map do |collaborator| 
+    @trips = @user.collaborators.map do |collaborator|
       {
         trip:collaborator.trip,
         destinations: collaborator.trip.destinations
@@ -65,12 +68,17 @@ class TripsController < ApplicationController
     destinations_params['destinations'].each do |destination|
       @place_details = HTTParty.get("https://maps.googleapis.com/maps/api/place/details/json?key=#{ENV['GOOGLE_PLACES_API_KEY']}&place_id=#{destination['place_id']}")
 
-      Destination.create({
+      @place = Destination.create({
         name: @place_details['result']['name'],
         trip_id: trip_id,
         lat: @place_details['result']['geometry']['location']['lat'],
         lng: @place_details['result']['geometry']['location']['lng']
       })
+      puts "PLACE"
+      puts @place
+      Component.create({destination_id: @place["id"], title: "Attractions"})
+      Component.create({destination_id: @place["id"], title: "Restaurants"})
+
     end
   end
 
