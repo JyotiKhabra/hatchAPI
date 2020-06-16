@@ -71,8 +71,6 @@ class TripsController < ApplicationController
         lat: @place_details['result']['geometry']['location']['lat'],
         lng: @place_details['result']['geometry']['location']['lng']
       })
-      puts "PLACE"
-      puts @place
       Component.create({destination_id: @place["id"], title: "Attractions"})
       Component.create({destination_id: @place["id"], title: "Restaurants"})
 
@@ -81,8 +79,6 @@ class TripsController < ApplicationController
 
 
   def save_collaborators(trip_id)
-    puts 'COLLAB'
-    puts collaborators_params
     collaborators_params['collaborators'].each do |collaborator|
       Collaborator.create({user_id: collaborator['id'], trip_id: trip_id})
     end
