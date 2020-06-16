@@ -25,6 +25,7 @@ class ComponentItemsController < ApplicationController
         title: component_item_params['title'],
         description: component_item_params['description'],
         component_id: component_item_params['component_id'],
+        creator_name: component_item_params['creator_name'],
         image_url: @details['result']['photos'][0]['photo_reference'],
         address: @details['result']['vicinity']
       }
@@ -33,7 +34,8 @@ class ComponentItemsController < ApplicationController
       data = {
         title: component_item_params['title'],
         description: component_item_params['description'],
-        component_id: component_item_params['component_id']
+        component_id: component_item_params['component_id'],
+        creator_name: component_item_params['creator_name']
       } 
       @component_item = ComponentItem.create(data)
     end
@@ -48,6 +50,7 @@ private
       :title,
       :description,
       :component_id,
+      :creator_name,
       :place_id
     )
   end
