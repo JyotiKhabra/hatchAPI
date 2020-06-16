@@ -59,20 +59,14 @@ user6.save!
 ##trips
 
 trip1 = Trip.new(
-  title: "Euro Trip",
-  description: "Exploring European history and culture!",
+  title: "European Adventure",
+  description: "Escargot, Bolognese & Tapas... Oh my!",
   start_date: "July 22 2020",
   end_date: "August 1 2020"
 )
 trip1.save!
 
-trip2 = Trip.new(
-  title: "All American Road Trip",
-  description: "Road trip through all the national parks in the USA",
-  start_date: "August 5 2020",
-  end_date: "October 1 2020"
-)
-trip2.save!
+
 
 
 ##destinations
@@ -146,7 +140,7 @@ component1 = Component.new(
 component1.save!
 
 component2 = Component.new(
-  title: "Sights to See",
+  title: "Bars",
   destination_id: 1
 )
 component2.save!
@@ -187,6 +181,23 @@ component8 = Component.new(
 )
 component8.save!
 
+component9 = Component.new(
+  title: "Day Trips",
+  destination_id: 3
+)
+component9.save!
+
+component10 = Component.new(
+  title: "Museums",
+  destination_id: 3
+)
+component10.save!
+
+component11 = Component.new(
+  title: "Pasta",
+  destination_id: 3
+)
+component11.save!
 
 
 ##component_items
@@ -309,5 +320,151 @@ component_item12.save!
 
 
 
+#rome seeds 
+
+component_item30 = ComponentItem.new(
+  title: "Vatican City",
+  description: "Home to the pope."
+  image_url: "https://images.pexels.com/photos/3892129/pexels-photo-3892129.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
+  address: "Città del Vaticano 00120 Vatican City",
+  component_id: 9
+)
+component_item30.save!
+
+component_item31 = ComponentItem.new(
+  title: "Cinque Terre",
+  description: "Would love to rent a boat here."
+  image_url: "https://images.pexels.com/photos/248771/pexels-photo-248771.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500",
+  address: "Province of La Spezia",
+  component_id: 9
+)
+component_item31.save!
 
 
+component_item32 = ComponentItem.new(
+  title: "Amalfi Coast",
+  description: "Lots of stairs, we better get in shape!"
+  image_url: "https://images.pexels.com/photos/1296200/pexels-photo-1296200.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500",
+  address: "Costiera Amalfitana",
+  component_id: 9
+)
+component_item32.save!
+
+
+
+component_item33 = ComponentItem.new(
+  title: "Tuscany",
+  description: "Wine tour?"
+  image_url: "https://images.pexels.com/photos/51947/tuscany-grape-field-nature-51947.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500",
+  component_id: 9
+)
+component_item33.save!
+
+
+component_item34 = ComponentItem.new(
+  title: "Borghese",
+  image_url: "https://images.pexels.com/photos/21264/pexels-photo.jpg?auto=compress&cs=tinysrgb&dpr=1&w=500",
+  address: "Piazzale Scipione Borghese, 5, 00197 Roma RM, Italy",
+  component_id: 10
+)
+component_item34.save!
+
+component_item35 = ComponentItem.new(
+  title: "Pantheon",
+  image_url: "https://images.pexels.com/photos/2676602/pexels-photo-2676602.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500",
+  address: "Piazza della Rotonda, 00186 Roma RM, Italy",
+  component_id: 10
+)
+component_item35.save!
+
+component_item35 = ComponentItem.new(
+  title: "National Roman Museum",
+  image_url: "https://images.pexels.com/photos/615344/julius-caesar-rome-roman-empire-615344.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500",
+  address: "Viale Enrico de Nicola, 78, 00185 Roma RM, Italy",
+  component_id: 10
+)
+component_item35.save!
+
+
+component_item36 = ComponentItem.new(
+  title: "National Gallery of Modern and Contemporary Art",
+  image_url: "https://images.pexels.com/photos/1573434/pexels-photo-1573434.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500",
+  description: "I've heard great things about this museum! Something different."
+  component_id: 10
+)
+component_item36.save!
+
+component_item37 = ComponentItem.new(
+  title: "Cantina e Cucina",
+  image_url: "https://images.pexels.com/photos/1487511/pexels-photo-1487511.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500",
+  description: "Carbonara on my mind."
+  address: "Via del Governo Vecchio, 87, 00186 Roma RM, Italy"
+  component_id: 11
+)
+component_item37.save!
+
+component_item38 = ComponentItem.new(
+  title: "La Tavernaccia",
+  image_url: "https://images.pexels.com/photos/1487511/pexels-photo-1487511.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500",
+  description: "Black truffle sauce? Yes."
+  address: "Via Giovanni da Castel Bolognese, 63, 00153 Roma RM, Italy"
+  component_id: 11
+)
+component_item38.save!
+
+component_item39 = ComponentItem.new(
+  title: "Roscioli Salumeria con Cucina",
+  image_url: "https://images.pexels.com/photos/1352271/pexels-photo-1352271.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500",
+  description: "At least for dessert!"
+  address: "Via dei Giubbonari, 21, 00186 Roma RM, Italy"
+  component_id: 11
+)
+component_item39.save!
+
+
+component_item40 = ComponentItem.new(
+  title: "Roscioli Salumeria con Cucina",
+  image_url: "https://images.pexels.com/photos/1398688/pexels-photo-1398688.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500",
+  description: "There is nothing wrong with eating pasta every day in Italy!"
+  address: "Piazzale Aurelio, 7, 00152 Roma RM, Italy"
+  component_id: 11
+)
+component_item40.save!
+
+#paris seeds
+
+component_item41 = ComponentItem.new(
+  title: "Le Syndicat",
+  image_url: "https://images.pexels.com/photos/1189257/pexels-photo-1189257.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500",
+  description: "Mixology spot."
+  address: "51 Rue du Faubourg Saint-Denis, 75010 Paris, France"
+  component_id: 2
+)
+component_item41.save!
+
+component_item42 = ComponentItem.new(
+  title: "Billili",
+  image_url: "https://images.pexels.com/photos/774455/pexels-photo-774455.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=5000",
+  description: "Wine bar."
+  address: "136 Rue du Faubourg Poissonnière, 75010 Paris, France"
+  component_id: 2
+)
+component_item42.save!
+
+component_item43 = ComponentItem.new(
+  title: "Combat",
+  image_url: "https://images.pexels.com/photos/3793319/pexels-photo-3793319.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500",
+  description: "Great view."
+  address: "63 Rue de Belleville, 75019 Paris, France"
+  component_id: 2
+)
+component_item43.save!
+
+component_item44 = ComponentItem.new(
+  title: "Lulu White",
+  image_url: "https://images.pexels.com/photos/3771819/pexels-photo-3771819.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500",
+  description: "Absinthe laced cocktail? Yes please."
+  address: "12 Rue Frochot, 75009 Paris, France"
+  component_id: 2
+)
+component_item44.save!
