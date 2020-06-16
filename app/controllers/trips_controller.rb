@@ -12,9 +12,6 @@ class TripsController < ApplicationController
       destination.components
     end
 
-    # component_items: destination.components.map do |component|
-    #   component.component_items
-    # end
     @packing_items = @trip.packing_items
     @collaborators = @trip.collaborators
     @all_info = {
