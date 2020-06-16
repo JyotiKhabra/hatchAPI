@@ -146,7 +146,7 @@ component2 = Component.new(
 component2.save!
 
 component3 = Component.new(
-  title: "Entertainment",
+  title: "Touristy Musts",
   destination_id: 1
 )
 component3.save!
@@ -202,15 +202,7 @@ component11.save!
 
 ##component_items
 
-component_item1 = ComponentItem.new(
-  title: "Hardware Societe Paris",
-  description: "Best french toast in all the land!!!",
-  image_url: "https://lh5.googleusercontent.com/p/AF1QipNVU0mVAGdqg2LCT-K-1fsZr7zKI3j2o7NemJr2=w408-h306-k-no",
-  address: "The Hardware Société Paris, Rue Lamarck, Paris, France",
-  component_id: 1
-)
-component_item1.save!
-
+##Barcelona seeds
 
 component_item2 = ComponentItem.new(
   title: "Disfrutar Barcelona",
@@ -320,7 +312,7 @@ component_item12.save!
 
 
 
-#rome seeds 
+#rome seeds
 
 component_item30 = ComponentItem.new(
   title: "Vatican City",
@@ -468,3 +460,89 @@ component_item44 = ComponentItem.new(
   component_id: 2
 )
 component_item44.save!
+
+component_item1 = ComponentItem.new(
+  title: "Hardware Societe Paris",
+  description: "Best french toast in all the land!!!",
+  image_url: "https://lh5.googleusercontent.com/p/AF1QipNVU0mVAGdqg2LCT-K-1fsZr7zKI3j2o7NemJr2=w408-h306-k-no",
+  address: "The Hardware Société Paris, Rue Lamarck, Paris, France",
+  component_id: 1
+)
+component_item1.save!
+
+component_item13 = ComponentItem.new(
+  title: "Patchanka",
+  description: "Delicious food!",
+  image_url: "https://www.google.com/maps/place/Patchanka/@48.8615176,2.3706234,3a,75y,90t/data=!3m8!1e2!3m6!1sAF1QipPEU9dPKdMHfqgqPzwNEB0pR899UM3q_D124W5d!2e10!3e12!6shttps:%2F%2Flh5.googleusercontent.com%2Fp%2FAF1QipPEU9dPKdMHfqgqPzwNEB0pR899UM3q_D124W5d%3Dw129-h86-k-no!7i2304!8i1536!4m8!1m2!2m1!1srestaurants+in+paris!3m4!1s0x47e66dfc30c37ce9:0x19977e019bb1eb24!8m2!3d48.861559!4d2.3705985#",
+  address: "33-35 Rue Saint-Sébastien, 75011 Paris, France",
+  component_id: 1
+)
+component_item13.save!
+
+component_item14 = ComponentItem.new(
+  title: "Epicure",
+  description: "Perfect little homey place to grab a bite.",
+  image_url: "https://www.google.com/maps/uv?hl=en&pb=!1s0x47e66feaaa07e555%3A0xd52e77609ee2730c!3m1!7e115!4shttps%3A%2F%2Flh5.googleusercontent.com%2Fp%2FAF1QipNl-ZGwm9huun__I8cq0FUreU23KRXg0-COv3PJ%3Dw260-h175-n-k-no!5splaces%20to%20eat%20in%20paris%20-%20Google%20Search!15sCgIgAQ&imagekey=!1e10!2sAF1QipNl-ZGwm9huun__I8cq0FUreU23KRXg0-COv3PJ#",
+  address: "112 Rue du Faubourg Saint-Honoré, 75008 Paris, France",
+  component_id: 1
+)
+component_item14.save!
+
+component_item15 = ComponentItem.new(
+  title: "Guy Savoy",
+  description: "Beautiful fine dining!",
+  image_url: "https://www.google.com/maps/uv?hl=en&pb=!1s0x47e66fec9f9184eb%3A0x240145c04a25b01f!3m1!7e115!4shttps%3A%2F%2Flh5.googleusercontent.com%2Fp%2FAF1QipMxV73LYXwqB1XN52A-xC1idL03V3d9_3b17XVO%3Dw130-h87-n-k-no!5splaces%20to%20eat%20in%20paris%20-%20Google%20Search!15sCgIgAQ&imagekey=!1e10!2sAF1QipMxV73LYXwqB1XN52A-xC1idL03V3d9_3b17XVO#",
+  address: "Monnaie de Paris, 11 Quai de Conti, 75006 Paris, France",
+  component_id: 1
+)
+component_item15.save!
+
+component_item16 = ComponentItem.new(
+  title: "Eiffel Tower",
+  description: "The Eiffel Tower!!!! Must see and have a picnic here!",
+  image_url: "https://www.google.com/maps/uv?hl=en&pb=!1s0x47e66e2964e34e2d%3A0x8ddca9ee380ef7e0!3m1!7e115!4shttps%3A%2F%2Flh5.googleusercontent.com%2Fp%2FAF1QipP8E1nOUwx73CrO0pnZzHTk_O3dTyfzbN6aWnYt%3Dw254-h160-k-no!5sEiffel%20Tower%20-%20Google%20Search!15sCgIgAQ&imagekey=!1e10!2sAF1QipP8E1nOUwx73CrO0pnZzHTk_O3dTyfzbN6aWnYt&sa=X&ved=2ahUKEwjj6oHcnYXqAhVSj54KHTFXAfAQoiowIHoECB4QBg#",
+  address: "Champ de Mars, 5 Avenue Anatole France, 75007 Paris, France",
+  component_id: 3
+)
+component_item16.save!
+
+component_item17 = ComponentItem.new(
+  title: "Sacré-Cœur",
+  description: "The Basilica of the Sacred Heart of Paris",
+  image_url: "https://www.google.com/maps/uv?hl=en&pb=!1s0x47e66e4334868de3%3A0xcfc3870abe2b8519!3m1!7e115!4shttps%3A%2F%2Flh5.googleusercontent.com%2Fp%2FAF1QipN36eRxqmJpAghaLYIBF4tgas65GUtGodYOEJtZ%3Dw135-h160-k-no!5sSacr%C3%A9-C%C5%93ur%20-%20Google%20Search!15sCgIgAQ&imagekey=!1e10!2sAF1QipN36eRxqmJpAghaLYIBF4tgas65GUtGodYOEJtZ&sa=X&ved=2ahUKEwiO6JaKnoXqAhVSjp4KHXojB_gQoiowH3oECBsQBg#",
+  address: "35 Rue du Chevalier de la Barre, 75018 Paris, France",
+  component_id: 3
+)
+component_item17.save!
+
+
+component_item18 = ComponentItem.new(
+  title: "Arc de Triomphe",
+  description: "The Arc de Triomphe de l'Étoile is one of the most famous monuments in Paris, France, standing at the western end of the Champs-Élysées.",
+  image_url: "https://www.google.com/maps/uv?hl=en&pb=!1s0x47e66fec70fb1d8f%3A0xd9b5676e112e643d!3m1!7e115!4shttps%3A%2F%2Flh5.googleusercontent.com%2Fp%2FAF1QipPcaaqlW7RUrEPFc57Vzb_DTEsVp-9TZRVjbPYg%3Dw244-h160-k-no!5sArc%20de%20Triomphe%20-%20Google%20Search!15sCgIgAQ&imagekey=!1e10!2sAF1QipOjE8d0LhzjBgGUtyhZi4eChBkXZJEjgUhjA-vO&sa=X&ved=2ahUKEwiJhpi2noXqAhVUuZ4KHdJNA_gQoiowIHoECB0QBg#",
+  address: "Place Charles de Gaulle, 75008 Paris, France",
+  component_id: 3
+)
+component_item18.save!
+
+
+component_item19 = ComponentItem.new(
+  title: "Cathédrale Notre-Dame de Paris",
+  description: "BThe cathedral was consecrated to the Virgin Mary and considered to be one of the finest examples of French Gothic architecture.",
+  image_url: "https://www.google.com/maps/uv?hl=en&pb=!1s0x47e671e19ff53a01%3A0x36401da7abfa068d!3m1!7e115!4shttps%3A%2F%2Fwww.trover.com%2Fd%2F1p9Ws-cath%25C3%25A9drale-notre-dame-de-paris-paris-france!5sCath%C3%A9drale%20Notre-Dame%20de%20Paris%20-%20Google%20Search!15sCgIgAQ&imagekey=!1e1!2shttps%3A%2F%2Fmedia2.trover.com%2FT%2F5ae608962c2e91d002045396%2Ffixedw.jpg&sa=X&ved=2ahUKEwi6mIj8noXqAhUW7J4KHR9JDPAQoiowJ3oECB0QBg#",
+  address: "6 Parvis Notre-Dame - Pl. Jean-Paul II, 75004 Paris, France",
+  component_id: 3
+)
+component_item19.save!
+
+component_item20 = ComponentItem.new(
+  title: "Palace of Versailles",
+  description: "The Palace of Versailles was the principal royal residence of France from 1682, under Louis XIV." ,
+  image_url: "https://www.google.com/maps/uv?hl=en&pb=!1s0x47e67d94d7b14c75%3A0x538fcc15f59ce8f!3m1!7e115!4shttps%3A%2F%2Flh5.googleusercontent.com%2Fp%2FAF1QipM36q9Nc6foEMgY5Q3a2wCR9bmdUiRH_Rff7Lms%3Dw213-h160-k-no!5sPalace%20of%20Versailles%20-%20Google%20Search!15sCgIgAQ&imagekey=!1e10!2sAF1QipMxnPZ2mQvxXetRYF4nTifnXwnZbHpwX2z934zs&sa=X&ved=2ahUKEwji-eWon4XqAhWSvp4KHbC0C_gQoiowJ3oECBoQBg#",
+  address: "Place d'Armes, 78000 Versailles, France",
+  component_id: 3
+)
+component_item20.save!
+
+
+
