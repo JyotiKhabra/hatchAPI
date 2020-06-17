@@ -18,7 +18,7 @@ user1.save!
 
 user2 = User.new(
   name: 'Joey Kishiuchi',
-  email: "joey.kishiuchi@example.com",
+  email: "josephkishiuchi@gmail.com",
   password_digest: "password"
 )
 
@@ -26,11 +26,28 @@ user2.save!
 
 user3 = User.new(
   name: 'Jyoti Khabra',
-  email: "jyoti.khabra@example.com",
+  email: "khabra.jyoti@gmail.com",
   password_digest: "password"
 )
 
 user3.save!
+
+user4 = User.new(
+  name: 'John Smith',
+  email: "john.smith@example.com",
+  password_digest: "password"
+)
+
+user4.save!
+
+user5 = User.new(
+  name: "Kerry Oki",
+  email: "kerry.oki@example.com",
+  password_digest: "password"
+)
+
+user5.save!
+
 
 ##trips
 
