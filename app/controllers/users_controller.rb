@@ -5,6 +5,9 @@ class UsersController < ApplicationController
     render json: @user
   end
 
+  def create
+  end
+
   def show
     @user = User.find(params[:id])
     @trips = @user.collaborators.map do |collaborator| 

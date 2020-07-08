@@ -6,7 +6,7 @@ Rails.application.routes.draw do
   get 'places/index'
 
   scope '/api' do
-    resources :users, only: [:index, :show]
+    resources :users, only: [:index, :create, :show]
     resources :places, only: [:show]
     resources :place_details, only: [:show]
     resources :trips, only: [:create, :show, :destroy]
