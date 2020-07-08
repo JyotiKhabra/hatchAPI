@@ -6,6 +6,8 @@ class UsersController < ApplicationController
   end
 
   def create
+    @newUser = User.create(user_params)
+    render json: @newUser
   end
 
   def show
@@ -17,6 +19,16 @@ class UsersController < ApplicationController
       }
     end
     render json: @trips
+  end
+
+  private 
+
+  def user_params
+    params.permit(
+      :name,
+      :email,
+      :password_digest
+    )
   end
 
 end
