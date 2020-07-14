@@ -27,7 +27,8 @@ class UsersController < ApplicationController
     params.permit(
       :name,
       :email,
-      :password_digest
+      :password_digest,
+      :avatar
     )
   end
 
