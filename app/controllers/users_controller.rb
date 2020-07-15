@@ -5,6 +5,11 @@ class UsersController < ApplicationController
     render json: @user
   end
 
+  def create
+    @newUser = User.create(user_params)
+    render json: @newUser
+  end
+
   def show
     @user = User.find(params[:id])
     @trips = @user.collaborators.map do |collaborator| 
@@ -14,6 +19,17 @@ class UsersController < ApplicationController
       }
     end
     render json: @trips
+  end
+
+  private 
+
+  def user_params
+    params.permit(
+      :name,
+      :email,
+      :password_digest,
+      :avatar
+    )
   end
 
 end

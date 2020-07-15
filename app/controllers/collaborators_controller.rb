@@ -5,22 +5,15 @@ class CollaboratorsController < ApplicationController
 
   def create
     @collaborators = save_collaborators()
-    @allUsers = @collaborators.map { |collaborator| {
-      id: collaborator.id,
-      name: collaborator.user.name
-    }}
-    render json: @allUsers
+  
+    head :ok
   end
 
   def destroy
     @currentCollaborator = Collaborator.find(params[:id])
     @currentCollaborator.destroy
-    @collaborators = Collaborator.where(trip_id: trip_id_params["trip_id"])
-    @allUsers = @collaborators.map { |collaborator| {
-      id: collaborator.id,
-      name: collaborator.user.name
-    }}
-    render json: @allUsers
+   
+    head :ok
   end
 
   def save_collaborators()
@@ -29,8 +22,6 @@ class CollaboratorsController < ApplicationController
     end
 
     @collaborators = Collaborator.where(trip_id: trip_id_params["trip_id"])
-
-
   end
 
   private

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20200616054037) do
+ActiveRecord::Schema.define(version: 20200715042949) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -34,7 +34,7 @@ ActiveRecord::Schema.define(version: 20200616054037) do
     t.integer  "component_id"
     t.datetime "created_at",   null: false
     t.datetime "updated_at",   null: false
-    t.string   "creator_name"
+    t.integer  "user_id"
   end
 
   add_index "component_items", ["component_id"], name: "index_component_items_on_component_id", using: :btree
@@ -62,10 +62,10 @@ ActiveRecord::Schema.define(version: 20200616054037) do
   create_table "packing_items", force: :cascade do |t|
     t.text     "description"
     t.integer  "trip_id"
-    t.datetime "created_at",                   null: false
-    t.datetime "updated_at",                   null: false
-    t.boolean  "checked",      default: false
-    t.string   "creator_name"
+    t.datetime "created_at",                  null: false
+    t.datetime "updated_at",                  null: false
+    t.boolean  "checked",     default: false
+    t.integer  "user_id"
   end
 
   add_index "packing_items", ["trip_id"], name: "index_packing_items_on_trip_id", using: :btree
@@ -85,6 +85,7 @@ ActiveRecord::Schema.define(version: 20200616054037) do
     t.string   "password_digest"
     t.datetime "created_at",      null: false
     t.datetime "updated_at",      null: false
+    t.string   "avatar"
   end
 
   add_foreign_key "collaborators", "trips"
