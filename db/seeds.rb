@@ -119,21 +119,21 @@ collaborator3.save!
 packing_item1 = PackingItem.new(
   description: "Sunnies",
   trip_id: 1,
-  creator_name: "Joey Kishiuchi"
+  user_id: 2
 )
 packing_item1.save!
 
 packing_item2 = PackingItem.new(
   description: "Passport",
   trip_id: 1,
-  creator_name: "Stacey Keating"
+  user_id: 1
 )
 packing_item2.save!
 
 packing_item3 = PackingItem.new(
   description: "Book",
   trip_id: 1,
-  creator_name: "Jyoti Khabra"
+  user_id: 3
 )
 packing_item3.save!
 
@@ -141,14 +141,14 @@ packing_item3.save!
 packing_item4 = PackingItem.new(
   description: "Walking shoes",
   trip_id: 1,
-  creator_name: "Joey Kishiuchi"
+  user_id: 2
 )
 packing_item4.save!
 
 packing_item5 = PackingItem.new(
   description: "Formal dress",
   trip_id: 1,
-  creator_name: "Jyoti Khabra"
+  user_id: 3
 )
 packing_item5.save!
 
@@ -156,21 +156,21 @@ packing_item5.save!
 packing_item6 = PackingItem.new(
   description: "Makeup bag",
   trip_id: 1,
-  creator_name: "Stacey Keating"
+  user_id: 1
 )
 packing_item6.save!
 
 packing_item7 = PackingItem.new(
   description: "Headphones",
   trip_id: 1,
-  creator_name: "Stacey Keating"
+  user_id: 1
 )
 packing_item7.save!
 
 packing_item8 = PackingItem.new(
   description: "Camera",
   trip_id: 1,
-  creator_name: "Joey Kishiuchi"
+  user_id: 2
 )
 
 packing_item8.save!
@@ -178,7 +178,7 @@ packing_item8.save!
 packing_item9 = PackingItem.new(
   description: "Money belt",
   trip_id: 1,
-  creator_name: "Jyoti Khabra"
+  user_id: 3
 )
 
 packing_item9.save!
