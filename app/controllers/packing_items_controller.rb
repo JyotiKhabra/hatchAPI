@@ -16,7 +16,7 @@ class PackingItemsController < ApplicationController
     @packing_item = PackingItem.find(params[:id])
     @packing_item.description = packing_item_params['description']
     @packing_item.checked = packing_item_params['checked']
-    @packing_item.creator_name = packing_item_params['creator_name']
+    @packing_item.user_id = packing_item_params['user_id']
     @packing_item.save!
     @packing_items = PackingItem.where(trip_id: packing_item_params['trip_id'])
     render json: @packing_items
@@ -36,7 +36,7 @@ class PackingItemsController < ApplicationController
       :description,
       :trip_id,
       :checked,
-      :creator_name
+      :user_id
     )
   end
 end

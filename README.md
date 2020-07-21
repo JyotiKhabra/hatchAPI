@@ -1,6 +1,6 @@
 # hatchAPI
 This is a server-side API built with Ruby on Rails for a front-end ReactJS project called Hatch. 
-Follow this [link]() to see the front-end application set-up.
+Follow this [link](https://github.com/joeykishiuchi/hatch) to see the front-end application set-up.
 
 This server is hosted on heroku at this link:
 [https://hatch-server-api.herokuapp.com/](https://hatch-server-api.herokuapp.com/)
