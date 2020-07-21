@@ -13,7 +13,7 @@ Rails.application.routes.draw do
     resources :packing_items, only: [:create, :update, :destroy]
     resources :component_items, only: [:create, :show, :destroy]
     resources :components, only: [:create, :show, :update, :destroy ]
-    resources :collaborators, only: [:create, :add destroy]
+    resources :collaborators, only: [:create, :add, :destroy]
   end
   # NOTES
   # The priority is based upon order of creation: first created -> highest priority.
