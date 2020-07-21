@@ -6,15 +6,16 @@ Rails.application.routes.draw do
   get 'places/index'
 
   scope '/api' do
-    resources :users, only: [:index, :show]
+    resources :users, only: [:index, :create, :show]
     resources :places, only: [:show]
     resources :place_details, only: [:show]
     resources :trips, only: [:create, :show, :destroy]
     resources :packing_items, only: [:create, :update, :destroy]
     resources :component_items, only: [:create, :show, :destroy]
     resources :components, only: [:create, :show, :update, :destroy ]
-    resources :collaborators, only: [:create, :destroy]
+    resources :collaborators, only: [:create, :add destroy]
   end
+  # NOTES
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
