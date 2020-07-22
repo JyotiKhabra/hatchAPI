@@ -5,13 +5,9 @@ class UsersController < ApplicationController
     render json: @user
   end
 
-<<<<<<< HEAD
-  def create 
-=======
   def create
     @newUser = User.create(user_params)
     render json: @newUser
->>>>>>> 1352f3008d2e361739eb0da60b35e7f6520ab6a0
   end
 
   def show
