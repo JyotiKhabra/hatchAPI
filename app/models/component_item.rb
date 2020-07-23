@@ -1,3 +1,3 @@
-class ComponentItem < ActiveRecord::Base
+class ComponentItem < ApplicationRecord
   belongs_to :component
 end
