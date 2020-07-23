@@ -174,7 +174,7 @@ DEPENDENCIES
   httparty
   jbuilder (~> 2.0)
   jquery-rails
-  pg (~> 0.15)
+  pg (= 0.21.0)
   rack-cors
   rails (= 5.0.0)
   railties (= 5.0.0)
