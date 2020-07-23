@@ -3,7 +3,9 @@ ruby "2.3.5"
 
 gem 'rack-cors', :require => 'rack/cors'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
-gem 'rails', '4.2.6'
+gem 'rails', '5.0.0'
+
+gem 'railties', '5.0.0'
 
 gem 'httparty'
 
@@ -38,7 +40,6 @@ gem 'bcrypt', '~> 3.1.7'
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
 # gem 'byebug'
-  gem 'quiet_assets'
   gem 'dotenv-rails'
 end
 
