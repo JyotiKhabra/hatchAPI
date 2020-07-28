@@ -17,8 +17,9 @@ class SessionsController < ApplicationController
     end
   end
 
-  def show
-    user = JWT.decode(params[:token],nil, false)
+  def getUserByToken
+    token = request.headers['Authorization'].split(' ')[1]
+    user = JWT.decode(token, nil, false)
     render json: user
   end
 
