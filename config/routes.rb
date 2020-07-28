@@ -3,7 +3,12 @@ Rails.application.routes.draw do
 
   get 'places/index'
 
-  get 'places/index'
+  get 'auth/login' => 'sessions#new'
+  post 'auth/login' => 'sessions#create'
+  get 'auth/logout' => 'sessions#destroy'
+
+  get 'auth/signup' => 'users#new'
+  post 'auth/users' => 'users#create'
 
   scope '/api' do
     resources :users, only: [:index, :create, :show]
