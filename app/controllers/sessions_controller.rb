@@ -13,7 +13,7 @@ class SessionsController < ApplicationController
       session[:user_session] = token
       render json: {user: {id: user.id, name: user.name, email: user.email, avatar: user.avatar}, session_token: token}
     else 
-      render json: {error: "Invalid Credentials"}
+      render json: {status: 404}
     end
   end
 

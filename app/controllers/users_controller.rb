@@ -14,7 +14,7 @@ class UsersController < ApplicationController
       session[:user_session] = token
       render json: {user: @newUser, user_session: token}
     else 
-      render json: { error: "Invalid credentials" }
+      render status: 404
     end
   end
 
