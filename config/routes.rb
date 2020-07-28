@@ -6,6 +6,7 @@ Rails.application.routes.draw do
   get 'auth/login' => 'sessions#new'
   post 'auth/login' => 'sessions#create'
   get 'auth/logout' => 'sessions#destroy'
+  get 'auth/user' => 'sessions#show'
 
   get 'auth/signup' => 'users#new'
   post 'auth/users' => 'users#create'
