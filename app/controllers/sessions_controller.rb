@@ -12,8 +12,8 @@ class SessionsController < ApplicationController
       token = JWT.encode(payload, 'user_session')
       session[:user_session] = token
       render json: {user: {id: user.id, name: user.name, email: user.email, avatar: user.avatar}, session_token: token}
-    else 
-      render json: {status: 404}
+    # else 
+    #   render json: {status: 404}
     end
   end
 
