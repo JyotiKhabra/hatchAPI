@@ -3,7 +3,7 @@ require 'jwt'
 ActiveRecord::Base.include_root_in_json = true
 class UsersController < ApplicationController
 
-  def new 
+  def new
   end
 
   def create
@@ -13,7 +13,7 @@ class UsersController < ApplicationController
       token = JWT.encode(payload, 'user_session')
       session[:user_session] = token
       render json: {user: @newUser, user_session: token}
-    else 
+    else
       render status: 404
     end
   end
@@ -24,21 +24,21 @@ class UsersController < ApplicationController
     render json: @user
   end
 
-  # def create
-  #   @newUser = User.create(user_params)
-  #   render json: @newUser
-  # end
+  def create
+    @newUser = User.create(user_params)
+    render json: @newUser
+  end
 
-  # def show
-  #   @user = User.find(params[:id])
-  #   @trips = @user.collaborators.map do |collaborator|
-  #     {
-  #       trip:collaborator.trip,
-  #       destinations: collaborator.trip.destinations
-  #     }
-  #   end
-  #   render json: @trips
-  # end
+  def show
+    @user = User.find(params[:id])
+    @trips = @user.collaborators.map do |collaborator|
+      {
+        trip:collaborator.trip,
+        destinations: collaborator.trip.destinations
+      }
+    end
+    render json: @trips
+  end
 
   private
 
